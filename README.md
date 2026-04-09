@@ -6,6 +6,8 @@ This project classifies images into two classes:
 
 Training and inference are implemented in PyTorch, and the user interface is built with Streamlit.
 
+<img width="1919" height="1085" alt="Zrzut ekranu 2026-04-09 160752" src="https://github.com/user-attachments/assets/a7efa793-8eb5-430a-abc4-b6542745486b" />
+
 ## What This Project Does
 
 1. Trains two models:
@@ -57,12 +59,22 @@ The loader logic is implemented in model/dataset.py.
 - Default fallback ratio is 80 percent train and 20 percent test.
 - The split is reproducible with seed 42.
 
-Current dataset status used in recent runs:
+Current (quite small) dataset status I used in recent runs:
 - data/train/fake: 540 images
 - data/train/real: 435 images
 - data/test/fake: 0 images
 - data/test/real: 0 images
 - Effective fallback split used by training: Train 780, Test 195
+
+And results:
+
+<img width="2100" height="750" alt="training_curves" src="https://github.com/user-attachments/assets/d369834d-7f3a-4bf7-9f68-d335cadd3a57" />
+
+| Model | Accuracy | F1-score |
+|---|---|---|
+| Baseline CNN | 61.03% | 0.5683 |
+| ResNet50 (fine-tuned) | 81.03% | 0.8104 |
+
 
 ## Setup
 
