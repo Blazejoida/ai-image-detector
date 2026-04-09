@@ -78,9 +78,14 @@ And results:
 
 ## Setup
 
-1. Open the project directory.
+1. Clone the repository and enter the project directory.
 2. Create and activate a virtual environment.
 3. Install dependencies.
+
+```bash
+git clone https://github.com/Blazejoida/ai-image-detector.git
+cd ai-image-detector
+```
 
 Windows (PowerShell):
 
