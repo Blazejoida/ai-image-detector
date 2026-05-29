@@ -110,8 +110,20 @@ def get_loaders():
         train_dataset = Subset(train_full, train_indices)
         test_dataset = Subset(eval_full, test_indices)
 
-    train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
-    test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
+    train_loader = DataLoader(
+        train_dataset,
+        batch_size=BATCH_SIZE,
+        shuffle=True,
+        num_workers=12,
+        pin_memory=True
+    )
+    test_loader = DataLoader(
+        test_dataset,
+        batch_size=BATCH_SIZE,
+        shuffle=False,
+        num_workers=12,
+        pin_memory=True
+    )
 
     print(f"Data dir : {data_root}")
     print(f"Classes  : {train_full.class_to_idx}")
