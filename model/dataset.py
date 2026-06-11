@@ -114,15 +114,15 @@ def get_loaders():
         train_dataset,
         batch_size=BATCH_SIZE,
         shuffle=True,
-        num_workers=12,
-        pin_memory=True
+        num_workers=0,
+        pin_memory=False
     )
     test_loader = DataLoader(
         test_dataset,
         batch_size=BATCH_SIZE,
         shuffle=False,
-        num_workers=12,
-        pin_memory=True
+        num_workers=0,
+        pin_memory=False
     )
 
     print(f"Data dir : {data_root}")
